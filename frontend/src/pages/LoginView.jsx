@@ -23,15 +23,21 @@ export function LoginView() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="stacked-form" onSubmit={handleSubmit}>
       <h2>Авторизация</h2>
-      <input value={login} onChange={(e) => setLogin(e.target.value)} placeholder="Логин" />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Пароль"
-      />
+      <label>
+        Логин
+        <input value={login} onChange={(e) => setLogin(e.target.value)} placeholder="Логин" />
+      </label>
+      <label>
+        Пароль
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Пароль"
+        />
+      </label>
       <button type="submit">Войти</button>
       {message ? <p>{message}</p> : null}
     </form>
